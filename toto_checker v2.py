@@ -4,11 +4,11 @@ def toto_check(x):
     date = now.strftime("%d %B %Y")
     open(date + ' toto.txt', 'w').close()
     for y in range(x):
-        actual = [2, 15, 17, 27, 41, 48, 38]
+        actual = [1, 18, 28, 42, 43, 48, 45]
         counter = 0
         match = []
 
-        num = input("\nEnter your numbers")
+        num = input("\nEnter your numbers: ")
         num = num.split(",")
         lst = [int(i) for i in num]
         print(lst)
