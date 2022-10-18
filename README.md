@@ -1,2 +1,3 @@
 # toto_checker
-Python & HTML
+1. Python
+2. HTML
