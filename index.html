@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>TOTO</title>
+    <style>
+      body {
+        padding: 25px;
+        background-color: rgb(133, 138, 133);
+        color: white;
+        font-size: 25px;
+      }
+
+      .white-mode {
+        background-color: white;
+        color: black;
+      }
+    </style>
+  </head>
+
+  <body style="text-align: center">
+    <form>
+      <h1>TOTO</h1>
+      <br />
+
+      <label for="draw">Draw:</label>
+      <input id="draw1" type="number" min="1" max="49" />
+      <input id="draw2" type="number" min="1" max="49" />
+      <input id="draw3" type="number" min="1" max="49" />
+      <input id="draw4" type="number" min="1" max="49" />
+      <input id="draw5" type="number" min="1" max="49" />
+      <input id="draw6" type="number" min="1" max="49" />
+      <input id="draw7" type="number" min="1" max="49" />
+
+      <br />
+      <br />
+      <label for="numbers">Your numbers:</label>
+      <input id="numbers1" type="number" min="1" max="49" />
+      <input id="numbers2" type="number" min="1" max="49" />
+      <input id="numbers3" type="number" min="1" max="49" />
+      <input id="numbers4" type="number" min="1" max="49" />
+      <input id="numbers5" type="number" min="1" max="49" />
+      <input id="numbers6" type="number" min="1" max="49" />
+      <br />
+
+      <br />
+      <label for="numbers">Your numbers:</label>
+      <input id="numbers7" type="number" min="1" max="49" />
+      <input id="numbers8" type="number" min="1" max="49" />
+      <input id="numbers9" type="number" min="1" max="49" />
+      <input id="numbers10" type="number" min="1" max="49" />
+      <input id="numbers11" type="number" min="1" max="49" />
+      <input id="numbers12" type="number" min="1" max="49" />
+      <br />
+
+      <br />
+      <label for="numbers">Your numbers:</label>
+      <input id="numbers13" type="number" min="1" max="49" />
+      <input id="numbers14" type="number" min="1" max="49" />
+      <input id="numbers15" type="number" min="1" max="49" />
+      <input id="numbers16" type="number" min="1" max="49" />
+      <input id="numbers17" type="number" min="1" max="49" />
+      <input id="numbers18" type="number" min="1" max="49" />
+      <br />
+
+      <br />
+      <label for="numbers">Your numbers:</label>
+      <input id="numbers19" type="number" min="1" max="49" />
+      <input id="numbers20" type="number" min="1" max="49" />
+      <input id="numbers21" type="number" min="1" max="49" />
+      <input id="numbers22" type="number" min="1" max="49" />
+      <input id="numbers23" type="number" min="1" max="49" />
+      <input id="numbers24" type="number" min="1" max="49" />
+      <br />
+
+      <br />
+      <label for="numbers">Your numbers:</label>
+      <input id="numbers25" type="number" min="1" max="49" />
+      <input id="numbers26" type="number" min="1" max="49" />
+      <input id="numbers27" type="number" min="1" max="49" />
+      <input id="numbers28" type="number" min="1" max="49" />
+      <input id="numbers29" type="number" min="1" max="49" />
+      <input id="numbers30" type="number" min="1" max="49" />
+      <br />
+
+      <br />
+      <input type="button" value="Save" onclick="savedata()" />
+      <br />
+    </form>
+    <div id="display"></div>
+    <button onclick="myFunction()">Toggle white mode</button>
+
+    <script>
+      function savedata() {
+        var arrDraw = [];
+        var arrNumbers1 = [];
+        var arrNumbers2 = [];
+        var arrNumbers3 = [];
+        var arrNumbers4 = [];
+        var arrNumbers5 = [];
+
+        let counter1 = 0;
+        let counter2 = 0;
+        let counter3 = 0;
+        let counter4 = 0;
+        let counter5 = 0;
+
+        let matchnum1 = [];
+        let matchnum2 = [];
+        let matchnum3 = [];
+        let matchnum4 = [];
+        let matchnum5 = [];
+
+        for (i = 1; i < 8; i++) {
+          x = "draw" + i;
+          arrDraw.push(+document.getElementById(x).value);
+        }
+        for (i = 1; i < 7; i++) {
+          x = "numbers" + i;
+          arrNumbers1.push(+document.getElementById(x).value);
+        }
+        for (i = 7; i < 13; i++) {
+          x = "numbers" + i;
+          arrNumbers2.push(+document.getElementById(x).value);
+        }
+        for (i = 13; i < 19; i++) {
+          x = "numbers" + i;
+          arrNumbers3.push(+document.getElementById(x).value);
+        }
+        for (i = 19; i < 25; i++) {
+          x = "numbers" + i;
+          arrNumbers4.push(+document.getElementById(x).value);
+        }
+        for (i = 25; i < 31; i++) {
+          x = "numbers" + i;
+          arrNumbers5.push(+document.getElementById(x).value);
+        }
+        for (i = 0; i < 7; i++) {
+          if (arrDraw.includes(arrNumbers1[i])) {
+            counter1 += 1;
+            matchnum1.push(arrNumbers1[i]);
+          }
+        }
+        if (matchnum1.length == 0) {
+          matchnum1 = "None";
+        }
+
+        for (i = 0; i < 7; i++) {
+          if (arrDraw.includes(arrNumbers2[i])) {
+            counter2 += 1;
+            matchnum2.push(arrNumbers2[i]);
+          }
+        }
+        if (matchnum2.length == 0) {
+          matchnum2 = "None";
+        }
+        for (i = 0; i < 7; i++) {
+          if (arrDraw.includes(arrNumbers3[i])) {
+            counter3 += 1;
+            matchnum3.push(arrNumbers3[i]);
+          }
+        }
+        if (matchnum3.length == 0) {
+          matchnum3 = "None";
+        }
+        for (i = 0; i < 7; i++) {
+          if (arrDraw.includes(arrNumbers4[i])) {
+            counter4 += 1;
+            matchnum4.push(arrNumbers4[i]);
+          }
+        }
+        if (matchnum4.length == 0) {
+          matchnum4 = "None";
+        }
+        for (i = 0; i < 7; i++) {
+          if (arrDraw.includes(arrNumbers5[i])) {
+            counter5 += 1;
+            matchnum5.push(arrNumbers5[i]);
+          }
+        }
+        if (matchnum5.length == 0) {
+          matchnum5 = "None";
+        }
+        let data =
+          "Actual: " +
+          JSON.stringify(arrDraw) +
+          "\r\r" +
+          "Your Numbers: " +
+          JSON.stringify(arrNumbers1) +
+          "\r" +
+          "Matches: " +
+          counter1 +
+          "\r" +
+          "Matched numbers: " +
+          JSON.stringify(matchnum1) +
+          "\r\r" +
+          "Your Numbers: " +
+          JSON.stringify(arrNumbers2) +
+          "\r" +
+          "Matches: " +
+          counter2 +
+          "\r" +
+          "Matched numbers: " +
+          JSON.stringify(matchnum2) +
+          "\r\r" +
+          "Your Numbers: " +
+          JSON.stringify(arrNumbers3) +
+          "\r" +
+          "Matches: " +
+          counter3 +
+          "\r" +
+          "Matched numbers: " +
+          JSON.stringify(matchnum3) +
+          "\r\r" +
+          "Your Numbers: " +
+          JSON.stringify(arrNumbers4) +
+          "\r" +
+          "Matches: " +
+          counter4 +
+          "\r" +
+          "Matched numbers: " +
+          JSON.stringify(matchnum4) +
+          "\r\r" +
+          "Your Numbers: " +
+          JSON.stringify(arrNumbers5) +
+          "\r" +
+          "Matches: " +
+          counter5 +
+          "\r" +
+          "Matched numbers: " +
+          JSON.stringify(matchnum5) +
+          "\r\r";
+
+        let date = new Date().toDateString();
+        date = date.substring(4, date.length);
+        console.log(date);
+
+        const textToBLOB = new Blob([data], { type: "text/plain" });
+        const sFileName = date + ".txt"; // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+          newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        } else {
+          newLink.href = window.URL.createObjectURL(textToBLOB);
+          newLink.style.display = "none";
+          document.body.appendChild(newLink);
+        }
+
+        newLink.click();
+      }
+      function myFunction() {
+        var element = document.body;
+        element.classList.toggle("white-mode");
+      }
+    </script>
+  </body>
+</html>
