@@ -1,29 +1,25 @@
-def toto_check(x):
+def toto_check():
     from datetime import datetime
     now = datetime.now()
     date = now.strftime("%d %B %Y")
-    open(date + ' toto.txt', 'w').close()
-    for y in range(x):
-        actual = [1, 18, 28, 42, 43, 48, 45]
-        counter = 0
-        match = []
+    open(date + ' TOTO Results.txt', 'w').close()
+    draw_results = input("Enter the draw results(comma separated): ").split(",")
+    draw_results = [int(i) for i in draw_results]
+    with open("numbers.txt", "r") as f:
+        for line in f:
+            counter = 0
+            match = []
+            num = line.strip().split(",")
+            lst = [int(i) for i in num]
+            for i in range(len(lst)):
+                if lst[i] in draw_results:
+                    counter += 1
+                    match.append(lst[i])
+            with open(date + ' TOTO Results.txt', 'a+', encoding='utf-8') as f:
+                f.write("Draw results: " + str(actual) + "\n")
+                f.write("Ticket number: " + str(lst) + "\n")
+                f.write("Number of matches: " + str(counter) + "\n")
+                match = match if counter > 0 else "none"
+                f.write("Matched numbers: " + str(match) + "\n\n")
 
-        num = input("\nEnter your numbers: ")
-        num = num.split(",")
-        lst = [int(i) for i in num]
-        print(lst)
-
-        for i in range(6):
-            if lst[i] in actual:
-                counter += 1
-                match.append(lst[i])
-
-        with open(date + ' toto.txt', 'a+', encoding='utf-8') as f:
-            f.write("Your Number: " + str(lst) + "\n")
-            f.write("Actual number: " + str(actual) + "\n")
-            f.write("Number of matches: " + str(counter) + "\n")
-            match = match if counter > 0 else "none"
-            f.write("Matched numbers: " + str(match) + "\n\n")
-
-
-toto_check(int(input("Number of bets: ")))
+toto_check()
