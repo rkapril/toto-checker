@@ -1,0 +1,25 @@
+Draw results: [15, 29, 35, 47, 48, 49, 10]
+Ticket number: [5, 14, 18, 29, 40, 42]
+Number of matches: 1
+Matched numbers: [29]
+
+Draw results: [15, 29, 35, 47, 48, 49, 10]
+Ticket number: [4, 22, 23, 31, 42, 44]
+Number of matches: 0
+Matched numbers: none
+
+Draw results: [15, 29, 35, 47, 48, 49, 10]
+Ticket number: [2, 7, 19, 22, 23, 33]
+Number of matches: 0
+Matched numbers: none
+
+Draw results: [15, 29, 35, 47, 48, 49, 10]
+Ticket number: [3, 13, 17, 18, 22, 33]
+Number of matches: 0
+Matched numbers: none
+
+Draw results: [15, 29, 35, 47, 48, 49, 10]
+Ticket number: [9, 16, 20, 39, 40, 48]
+Number of matches: 1
+Matched numbers: [48]
+
